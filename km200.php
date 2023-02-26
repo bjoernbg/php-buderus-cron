@@ -1,7 +1,10 @@
 <?php
 
-$heizung_ip = getenv('HEIZUNG_IP');
-$influx_url = getenv('INFLUX_URL');
+$heizung_ip = $_ENV["HEIZUNG_IP"];
+$influx_url = $_ENV["INFLUX_URL"];
+
+echo "\n\n HEIZUNG_IP: " . $heizung_ip;
+echo "\n INFLUX_URL: " . $influx_url;
 
 // IP Adresse oder DNS-Hostname des KM200 
 define( "km200_gateway_host", $heizung_ip, true ); 
