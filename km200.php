@@ -1,13 +1,7 @@
 <?php
 
-$heizung_ip = $_ENV["HEIZUNG_IP"];
-$influx_url = $_ENV["INFLUX_URL"];
-
-echo "\n\n HEIZUNG_IP: " . $heizung_ip;
-echo "\n INFLUX_URL: " . $influx_url;
-
 // IP Adresse oder DNS-Hostname des KM200 
-define( "km200_gateway_host", $heizung_ip, true ); 
+define( "km200_gateway_host", "192.168.178.135", true ); 
 // Port des KM200, nur bei Zugriff über Internet mit Portweiterleitung am Router ändern! 
 define( "km200_gateway_port", '80', true ); 
 
@@ -161,8 +155,7 @@ function prepareDataForInflux($measurement, $value) {
   return "Daten ".$measurement."=".$value."\n";
 }
 function sendDataToInflux($data) {    
-  $influx_url = getenv('INFLUX_URL');
-  $url = $influx_url . "/write?db=heizung&precision=s";
+  $url = "http://192.168.178.102:8086/write?db=heizung&precision=s";
   print($data . "\n");
 
   //open connection

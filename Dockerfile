@@ -21,8 +21,5 @@ RUN touch /var/log/cron.log
 
 VOLUME [ "/app" ]
 
-ENV HEIZUNG_IP=192.168.178.135
-ENV INFLUX_URL=http://192.168.178.102:8086
-
 # Run the command on container startup
 CMD cron && tail -f /var/log/cron.log
