@@ -6,7 +6,6 @@ define( "km200_gateway_host", "192.168.178.135", true );
 define( "km200_gateway_port", '80', true ); 
 
 /* 
-
 Für die Einbindung des Schlüssels zur Kommunikation mit dem KM200 gibt es mehrere Möglichkeiten. 
 
 1. PHP only 
